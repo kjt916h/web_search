@@ -46,5 +46,23 @@ def heartrailsAPI(loc):
     for index, station in enumerate(json_result["response"]["station"]):
         print(create_station_info(index+1, station))
 
+def info_search(loc, s):
+    url = "http://express.heartrails.com/api/json?{}".format(
+        urllib.parse.urlencode(
+            {"method" : "getStations",
+             "x" : loc['lng'],   # 入力からクエリを生成
+             "y" : loc['lat'],   # 入力からクエリを生成
+            }))
+    #print("URL:",url)
+    f_url = urllib.request.urlopen(url).read()
+    json_result = json.loads(f_url.decode("utf-8"))
+
+    #output
+    for index, station in enumerate(json_result["response"]["station"]):
+        s += create_station_info(index+1, station)
+        s += "\n"
+    
+    return s
+
 if __name__ == "__main__":
     main()
