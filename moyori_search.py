@@ -11,7 +11,8 @@ def cr(arg):
 @app.route('/', methods=['GET'])
 def get():
 	return render_template('map_search.html', \
-		title = '最寄りの施設・駅の検索', \
+        title = 'Web Computing Assignment', \
+		subtitle = '最寄りの施設・駅の検索', \
 		message = "現在地から近い施設名を入力してください。\n下のラジオボタンで検索したい店を選ぶことができます。", \
         results = "ここに結果が表示されます")
 
@@ -23,7 +24,8 @@ def post():
     else:
         search_type = "food"
     return render_template('map_search.html', \
-		title = '最寄りの施設・駅の検索', \
+        title = 'Web Computing Assignment', \
+		subtitle = '最寄りの施設・駅の検索', \
 	    message = '現在地から近い施設名を入力してください。\n下のラジオボタンで検索したい店を選ぶことができます。', \
         message2 = request.form["place"] + 'の近くの' + request.form["choice"] + 'の検索結果を表示します', \
         results = googlemap_test.search(request.form["place"], search_type, distance=request.form["sel"]))
