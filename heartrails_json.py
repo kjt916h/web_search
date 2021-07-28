@@ -5,9 +5,9 @@ import json
 
 def create_station_info(index, station):
     return """------ No, {} ------
-    【駅名】 {}
-    【路線名】 {}
-    【現在地からの距離】 {}""".format(index,
+【駅名】 {}
+【路線名】 {}
+【現在地からの距離】 {}""".format(index,
                                     station["name"], #駅名
                                     station["line"], #路線名
                                     station["distance"] #現在地からの距離
