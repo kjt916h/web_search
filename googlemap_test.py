@@ -61,6 +61,7 @@ def main():
     #print(loc['lat']) #緯度
     #print(loc['lng']) #経度
     #print(loc)
+    breakpoint()
     if (num_of_val >= 3 and sys.argv[2] == "food"):
         place_result = client.places_nearby(location=loc, radius=200, type='restaurant') #半径200m以内のレストランの情報を取得
         search_num = len(place_result["results"])
