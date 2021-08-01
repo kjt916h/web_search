@@ -58,10 +58,6 @@ def main():
     num_of_val = len(sys.argv)
     geocode_result = client.geocode(sys.argv[1])
     loc = geocode_result[0]['geometry']['location'] # 軽度・緯度の情報のみ取り出す
-    #print(loc['lat']) #緯度
-    #print(loc['lng']) #経度
-    #print(loc)
-    breakpoint()
     if (num_of_val >= 3 and sys.argv[2] == "food"):
         place_result = client.places_nearby(location=loc, radius=200, type='restaurant') #半径200m以内のレストランの情報を取得
         search_num = len(place_result["results"])
