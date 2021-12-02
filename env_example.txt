@@ -1,0 +1,2 @@
+# please input your API key of Google Geocoding API.
+GOOGLE_API_KEY = "PLEASE INSERT YOUR OWN APIKEY"
