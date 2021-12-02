@@ -1,1 +1,0 @@
-web: python moyori_search.py
