@@ -5,3 +5,4 @@ htmltest.py
 kyodoutest.py
 __pycache__
 samples
+.DS_Store
